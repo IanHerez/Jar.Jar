@@ -14,7 +14,8 @@ public class Cadenas {
         // TODO code application logic here
         Scanner leer=new Scanner(System.in);
         
-        String Curp, RFC, Nombre, Apellido, Matricula, Usuario, Contraseña;
+        String Curp, RFC, Nombre, Apellido, Matricula, Usuario, Contraseña, SaberRFC;
+        int Edad=19;
         
         System.out.println("Ingresa tu usuario: ");
         Usuario=leer.next();
@@ -23,7 +24,7 @@ public class Cadenas {
         Contraseña=leer.next();
         
         if (Usuario.equals("IAN") && Contraseña.equals("12345")) {
-            System.out.println("Datos Correctos");
+            System.out.println("Datos Correctos"); 
             System.out.println("Actualizar Datos");
             System.out.println("Ingresa tu nombre: ");
             Nombre=leer.next();
@@ -36,13 +37,18 @@ public class Cadenas {
                 System.out.println("CURP Valido");
             }else{
                 System.out.println("CURP Invalido");
-                System.out.println("Ingresa tu RFC: ");
+                System.out.println("Conoces tu RFC?");
+                SaberRFC = leer.next();
+                if (SaberRFC.equalsIgnoreCase("si")) {
+                    
+                    System.out.println("Ingrese su RFC");
                     RFC=leer.next();
-                    if (RFC.length()<10 && RFC.length()>13) {
-                        System.out.println("RFC Correcto");
+                    
                 }else{
-                        System.out.println("RFC Incorrecto, ingrese su RFC correcto");
-                    }
+                    RFC=Curp.substring(0,9);
+                    System.out.println("Su RFC es: " +RFC.trim());
+                            
+                }
             }
             
             System.out.println("Ingrese su matricula: ");
@@ -50,12 +56,21 @@ public class Cadenas {
             
             if (Matricula.length()==10) {
                 System.out.println("Su matricula es correcta");
+                long b= Long.valueOf(Matricula);
+                System.out.println("" +b);
             }else{
                 System.out.println("Su matricula es Incorrecta, Ingrese una matricula correcta");
             }
             
+            System.out.println("La primera letra de tu nombre es" +Nombre.charAt(0));
+            System.out.println("La primera letra de tu apellido es:" +Apellido.charAt(0));
+            System.out.println("El primer numero de tu matricula es: " +Matricula.charAt(0));
+            String a =String.valueOf(Edad);// De entero a cadena
+            System.out.println("variable a= " +a);
+            
         }else{
             System.out.println("Usuario y/o contraseña incorrecto");
+            
         }
     }
     
