@@ -13,6 +13,10 @@ public class ExamenPOO {
         // TODO code application logic here
         Scanner leer=new Scanner(System.in);
         
+        Datos objd= new Datos();
+        
+        
+        objd.DatosBasicos();
     }
     
 }
