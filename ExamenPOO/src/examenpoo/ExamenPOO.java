@@ -14,9 +14,10 @@ public class ExamenPOO {
         Scanner leer=new Scanner(System.in);
         
         Datos objd= new Datos();
+        IMC obji=new IMC ();
         
         
-        objd.DatosBasicos();
+        obji.CalcEdad();
     }
     
 }
