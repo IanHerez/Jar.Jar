@@ -77,7 +77,8 @@ Scanner leer=new Scanner(System.in);
      System.out.println("Ingrese su RFC: ");
      RFC=leer.next();
      
-     if (RFC.length()==10) {
+       
+     if (RFC.length()==13) { //HEEI061203P78
          System.out.println("Su RFC es correcta");
      }else{
          System.out.println("RFC incorrecto. Ingrese un RFC correcto: ");
@@ -88,7 +89,7 @@ Scanner leer=new Scanner(System.in);
      AñoNac=CURP.substring(4,6);
      MesNac=CURP.substring(6,8);
      DiaNac=CURP.substring(8,10);
-     System.out.println("Su fecha de nacimiento es: \n Dia: " + DiaNac.trim()+" \n Mes: "+ MesNac.trim()+"\n Anio: "+ AñoNac.trim());
+     System.out.println("Su fecha de nacimiento es: \nDia: " + DiaNac.trim()+" \nMes: "+ MesNac.trim()+"\nAnio: "+ AñoNac.trim());
      
      
      System.out.println("Ingrese su estado de residencia: ");
@@ -97,7 +98,7 @@ Scanner leer=new Scanner(System.in);
      System.out.println("Ingrese su estatus civil: Soltero / Casado / Viudo / Separado");
      EstCivil=leer.next();
      
-     System.out.println("Ingrese su genero: Masculino / Femenino");
+     System.out.println("Ingrese su genero: (M) Masculino / (F) Femenino");
      Genero=leer.next();
      
      System.out.println("Ingrese su peso en kilogramos: ");
