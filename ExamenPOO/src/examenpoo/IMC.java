@@ -8,37 +8,38 @@ package examenpoo;
  *
  * @author ianhe
  */
-public class IMC extends Datos {
+public class IMC extends Datos { //Clase Hija se extiende a clase Padre
 
-    Double CalcEdad, CalcIMC;
+    Double CalcEdad, CalcIMC; //Atributos principales
 
     public IMC() {
-        super();
+        super(); //Constructor vacio
     }
     
     
 
-    public IMC(Double CalcEdad, Double CalcIMC, Double IMC) {
+    public IMC(Double CalcEdad, Double CalcIMC, Double IMC) { //Constructor con las variables locales
         this.CalcEdad = CalcEdad;
         this.CalcIMC = CalcIMC;
     }
 
+        //Constructor para obtener las variables de la clase padre
     public IMC(String Nombre, String Nombres, String ApePa, String ApeMa, String CURP, String RFC, String DiaNac, String MesNac, String AñoNac, String EstadoResi, String EstCivil, String Genero, Double Peso, Double Estatura) {
         super(Nombre, Nombres, ApePa, ApeMa, CURP, RFC, DiaNac, MesNac, AñoNac, EstadoResi, EstCivil, Genero, Peso, Estatura);
     }
 
-    public void CalcEdad(){
+    public void CalcEdad(){ //Segmento de codigo para calcular la edad
         
-        this.DatosBasicos();
-        Double AñoNaci=Double.valueOf(AñoNac);
+        this.DatosBasicos(); //Se llama a la clase padre para que se rellenen los datos
+        Double AñoNaci=Double.valueOf(AñoNac);//Se convierte el año de nacimiento de STRING a DOUBLE 
         
-        if (AñoNaci >= 00 & AñoNaci <= 25) {
+        if (AñoNaci >= 00 & AñoNaci <= 25) { //Condicion para calcular la edad
             
-            AñoNaci = AñoNaci + 2000;
-            CalcEdad = 2025-AñoNaci;
+            AñoNaci = AñoNaci + 2000; //La fecha obtenida del curp de dos digitos se le suma 2000 
+            CalcEdad = 2025-AñoNaci; //Se calcula la edad del usuario restandole el año actual
             System.out.println("Su edad es: " + CalcEdad+ " Años");
         }else{
-            if (AñoNaci < 99 & AñoNaci >25) {
+            if (AñoNaci < 99 & AñoNaci >25) {//Condicion en caso de que los datos obtenidos del CURP sean del siglo pasado
                 AñoNaci=AñoNaci + 1900;
                 CalcEdad= 2025-AñoNaci;
             }
@@ -47,11 +48,11 @@ public class IMC extends Datos {
      
     //>” y menor que “<
     
-    public void CalcIMC(){
+    public void CalcIMC(){ //Segmento de codigo para obtener el IMC
         
-            CalcIMC= Peso/Math.pow(Estatura,2);
+            CalcIMC= Peso/Math.pow(Estatura,2); //Se obtiene el IMC con ayuda de la libreria MATH.POW
             
-            if (CalcIMC <=18.5) {
+            if (CalcIMC <=18.5) { //Se crea la condicion para dar el mensaje al usuario dependiendo el rango del resultado de su IMC
                 System.out.println("Su calculo "+Nombre+" "+ ApePa+ " " +ApeMa+"\nEdad: "+CalcEdad+" \nPeso: "+ Peso+ "\nSus datos indican que tiene un Indice de Masa Coporal (IMC) DE: \n"+CalcIMC+ " Lo que indica BAJO DE PESO");
         }else{
                 if (CalcIMC >=18.5 && CalcIMC <25 ) {

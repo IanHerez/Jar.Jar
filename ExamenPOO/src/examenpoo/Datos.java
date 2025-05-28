@@ -4,15 +4,15 @@
  */
 package examenpoo;
 
-import java.util.Scanner;
+import java.util.Scanner; //Obtener la paqueteria de scanner
 
-public class Datos { 
-Scanner leer=new Scanner(System.in);
+public class Datos {  //Clase Principal
+Scanner leer=new Scanner(System.in);//Scanner global para clase padre e hijas
     
-    String Nombre, Nombres, ApePa, ApeMa, CURP, RFC, DiaNac, MesNac, AñoNac, EstadoResi, EstCivil, Genero;
+    String Nombre, Nombres, ApePa, ApeMa, CURP, RFC, DiaNac, MesNac, AñoNac, EstadoResi, EstCivil, Genero; //Atributos
     Double Peso, Estatura;
 
-  public Datos(){
+  public Datos(){ //Constructor vacio
     super();
 }
 
@@ -21,7 +21,7 @@ Scanner leer=new Scanner(System.in);
         this.Nombres = Nombres;
         this.ApePa = ApePa;
         this.ApeMa = ApeMa;
-        this.CURP = CURP;
+        this.CURP = CURP;       //Construcctor con los atributos de la clase
         this.RFC = RFC;
         this.DiaNac = DiaNac;
         this.MesNac = MesNac;
@@ -39,10 +39,10 @@ Scanner leer=new Scanner(System.in);
 
    
    
- public void DatosBasicos(){
+ public void DatosBasicos(){ //Clase padre
      
      System.out.println("Tienes dos nombres? Si/No: ");
-     String NombElec = leer.next();
+     String NombElec = leer.next();       //Diferencias si el usuario tiene uno o dos nombres con if
      if (NombElec.equalsIgnoreCase("Si")) {
          
          System.out.println("Ingrese su primer nombre: ");
@@ -54,7 +54,7 @@ Scanner leer=new Scanner(System.in);
          System.out.println("Ingrese su apellido materno:");
          ApeMa=leer.next();
          
-     }else{
+     }else{  //Procedimiento si solo se tiene un nombre
          System.out.println("Ingrese su nombre: ");
          Nombre=leer.next();
          System.out.println("Ingrese su apellido paterno:");
@@ -68,7 +68,7 @@ Scanner leer=new Scanner(System.in);
      CURP=leer.next();
      
      if (CURP.length()==18) {
-         System.out.println("CURP correcto");
+         System.out.println("CURP correcto");  //Confirmar que el tamaño de la CURP sea correcta
      }else{
          System.out.println("Su CURP es incorrecto. FAVOR DE INGRESAR UN CURP CORRECTO");
          CURP=leer.next();
@@ -79,19 +79,19 @@ Scanner leer=new Scanner(System.in);
      
        
      if (RFC.length()==13) { //HEEI061203P78
-         System.out.println("Su RFC es correcta");
+         System.out.println("Su RFC es correcta"); //Verificar el tamaño del RFC con homoclave
      }else{
          System.out.println("RFC incorrecto. Ingrese un RFC correcto: ");
          RFC=leer.next();
      }
     
-     
+     //Obtener del CURP Año de Nacimiento, Mes, y dia con SUBSTRING
      AñoNac=CURP.substring(4,6);
      MesNac=CURP.substring(6,8);
      DiaNac=CURP.substring(8,10);
      System.out.println("Su fecha de nacimiento es: \nDia: " + DiaNac.trim()+" \nMes: "+ MesNac.trim()+"\nAnio: "+ AñoNac.trim());
      
-     
+     //Obtener datos adicionales
      System.out.println("Ingrese su estado de residencia: ");
      EstadoResi=leer.next();
      
