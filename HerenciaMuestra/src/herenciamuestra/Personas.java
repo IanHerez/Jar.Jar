@@ -1,21 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package herenciamuestra;
 
-import  java.util.Scanner; //Importar la libreria
-public class Personas {
-    
-    Scanner leer=new Scanner(System.in); //Objeto de Scanner
-    public String nom; //Se convierte en atributo
-    int edad;
-    String app, apm, correo, curp, tel;
-    
-    public Personas(){ //Constructor vacio
-        
-    }
+import java.util.Scanner;
 
+public class Personas {
+
+    private String nom;
+    private int edad;
+    private String app;
+    private String apm;
+    private String correo;
+    private String curp;
+    private String tel;
+
+    Scanner leer = new Scanner(System.in);
+
+    // Constructor vacío
+    public Personas() {}
+
+    // Constructor con parámetros
     public Personas(String nom, int edad, String apm, String app, String correo, String curp, String tel) {
         this.nom = nom;
         this.edad = edad;
@@ -25,41 +27,85 @@ public class Personas {
         this.curp = curp;
         this.tel = tel;
     }
-    
-    public void Nombre(){
-        System.out.println("Ingresa tu nombre");
-        nom=leer.next();
+
+    // Getters y setters
+    public String getNom() {
+        return nom;
     }
-    
-    public void Edad(){
-        System.out.println("Ingrese su edad");
-        edad = leer.nextInt();
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
-    
-    public void ApePA(){
-        System.out.println("Ingrese su apellido Paterno");
-        app = leer.next();
+
+    public int getEdad() {
+        return edad;
     }
-    
-    public void ApeMa(){
-        System.out.println("Ingresa su apellido materno");
-        apm = leer.next();
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
-    
-    public void Correo(){
-        System.out.println("Ingrese su correo");
-        correo = leer.next();
+
+    public String getApp() {
+        return app;
     }
-    
-    public void Telefono(){
-        System.out.println("Ingrese su numero de telefono:" );
-        tel = leer.next();
+
+    public void setApp(String app) {
+        this.app = app;
     }
-    
-    public void CURP(){
-        System.out.println("Ingresa tu CURP");
-        curp=leer.next();
+
+    public String getApm() {
+        return apm;
     }
-    
-   
+
+    public void setApm(String apm) {
+        this.apm = apm;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getCurp() {
+        return curp;
+    }
+
+    public void setCurp(String curp) {
+        this.curp = curp;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    // Métodos para pedir datos al usuario
+    public void pedirDatos() {
+        System.out.print("Ingresa tu nombre: ");
+        setNom(leer.next());
+
+        System.out.print("Ingrese su edad: ");
+        setEdad(leer.nextInt());
+
+        System.out.print("Ingrese su apellido paterno: ");
+        setApp(leer.next());
+
+        System.out.print("Ingrese su apellido materno: ");
+        setApm(leer.next());
+
+        System.out.print("Ingrese su correo: ");
+        setCorreo(leer.next());
+
+        System.out.print("Ingrese su CURP: ");
+        setCurp(leer.next());
+
+        System.out.print("Ingrese su número de teléfono: ");
+        setTel(leer.next());
+    }
 }
