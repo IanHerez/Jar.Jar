@@ -1,6 +1,7 @@
 package herenciamuestra;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class HerenciaMuestra {
 
@@ -13,11 +14,7 @@ public class HerenciaMuestra {
 
         int opcion;
 
-        System.out.println("Selecciona una opción:");
-        System.out.println("1 - Maestro");
-        System.out.println("2 - Alumno");
-        System.out.println("3 - Administrador");
-        opcion = leer.nextInt();
+       opcion=Integer.parseInt(JOptionPane.showInputDialog("==Bienvenido== \n Ingrese una de las siguientes opciones: \n 1.Docente  \n 2.Alumno \n 3.Administrador "));
 
         switch (opcion) {
             case 1:

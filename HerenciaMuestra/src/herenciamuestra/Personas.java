@@ -1,6 +1,6 @@
 package herenciamuestra;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Personas {
 
@@ -12,10 +12,9 @@ public class Personas {
     private String curp;
     private String tel;
 
-    Scanner leer = new Scanner(System.in);
-
     // Constructor vacío
-    public Personas() {}
+    public Personas() {
+    }
 
     // Constructor con parámetros
     public Personas(String nom, int edad, String apm, String app, String correo, String curp, String tel) {
@@ -87,25 +86,12 @@ public class Personas {
 
     // Métodos para pedir datos al usuario
     public void pedirDatos() {
-        System.out.print("Ingresa tu nombre: ");
-        setNom(leer.next());
-
-        System.out.print("Ingrese su edad: ");
-        setEdad(leer.nextInt());
-
-        System.out.print("Ingrese su apellido paterno: ");
-        setApp(leer.next());
-
-        System.out.print("Ingrese su apellido materno: ");
-        setApm(leer.next());
-
-        System.out.print("Ingrese su correo: ");
-        setCorreo(leer.next());
-
-        System.out.print("Ingrese su CURP: ");
-        setCurp(leer.next());
-
-        System.out.print("Ingrese su número de teléfono: ");
-        setTel(leer.next());
+        setNom(JOptionPane.showInputDialog("Ingresa tu nombre: "));
+        setEdad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese su edad: ")));
+        setApp(JOptionPane.showInputDialog("Ingrese su apellido paterno: "));
+        setApm(JOptionPane.showInputDialog("Ingrese su apellido materno: "));
+        setCorreo(JOptionPane.showInputDialog("Ingrese su correo: "));
+        setCurp(JOptionPane.showInputDialog("Ingrese su CURP: "));
+        setTel(JOptionPane.showInputDialog("Ingrese su número de teléfono: "));
     }
 }

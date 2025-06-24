@@ -1,9 +1,10 @@
 package herenciamuestra;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Admin extends Personas {
-    
+
     private String cargo;
     Scanner leer = new Scanner(System.in);
 
@@ -18,5 +19,13 @@ public class Admin extends Personas {
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    public void setClave() {
+        this.clave = JOptionPane.showInputDialog("Ingrese su clave de administrador: ");
+    }
+
+    public void setArea() {
+        this.area = JOptionPane.showInputDialog("Ingrese su área: ");
     }
 }

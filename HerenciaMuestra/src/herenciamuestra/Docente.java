@@ -1,15 +1,15 @@
 package herenciamuestra;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Docente extends Personas {
-    
+
     private String cedula, empleado;
     Scanner leer = new Scanner(System.in);
 
     public void Cedula() {
-        System.out.print("Ingresa tu cédula: ");
-        cedula = leer.next();
+        cedula = JOptionPane.showInputDialog("Ingrese su cedula:  ");
     }
 
     public void Empleado() {
@@ -22,15 +22,15 @@ public class Docente extends Personas {
         return cedula;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setCedula() {
+        this.cedula = JOptionPane.showInputDialog("Ingrese su cedula:  ");
     }
 
     public String getEmpleado() {
         return empleado;
     }
 
-    public void setEmpleado(String empleado) {
-        this.empleado = empleado;
+    public void setEmpleado() {
+        this.empleado = JOptionPane.showInputDialog("Ingresa tu número de empleado: ");
     }
 }

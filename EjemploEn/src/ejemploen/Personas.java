@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ejemploen;
-
+import javax.swing.JOptionPane; //Libreria para pantallas emergentes
 /**
  *
  * @author ianhe
@@ -31,7 +31,7 @@ public class Personas {
         if (edad>=0) {
             this.edad=edad;
         }else{
-            System.out.println("La edad no puede tener numeros negativos");
+            JOptionPane.showMessageDialog(null,"La edad no puede tener numeros negativos");
         }
     }
     
